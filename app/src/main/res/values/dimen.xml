@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margen_horizontal">15dp</dimen>
+    <dimen name="margen_vertical">15dp</dimen>
+    <dimen name="datos_mascota">30dp</dimen>
+    <dimen name="imagen_mascota">300sp</dimen>
+    <dimen name="elevacion_actionbar">4dp</dimen>
+</resources>
