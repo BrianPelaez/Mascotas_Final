@@ -13,9 +13,9 @@
     >
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/actionbar_imagen"
             android:layout_height="match_parent"
-            android:src="@drawable/baseline_camera_black_18dp">
+            android:src="@drawable/baseline_pets_black_18dp">
 
         </ImageView>
         <TextView

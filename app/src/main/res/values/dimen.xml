@@ -5,4 +5,5 @@
     <dimen name="datos_mascota">30dp</dimen>
     <dimen name="imagen_mascota">300sp</dimen>
     <dimen name="elevacion_actionbar">4dp</dimen>
+    <dimen name="actionbar_imagen">30dp</dimen>
 </resources>
