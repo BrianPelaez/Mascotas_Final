@@ -3,6 +3,7 @@ package com.example.mascotas;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,7 +19,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -32,14 +32,13 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Mascota> mascotas;
     FloatingActionButton fibCamara;
     ImageButton ibLike;
-    androidx.appcompat.widget.Toolbar miActionbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        miActionbar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.miActionbar);
+        Toolbar miActionbar = (Toolbar) findViewById(R.id.miActionbar);
         setSupportActionBar(miActionbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
@@ -97,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
         mascotas.add(new Mascota("Lolo", R.drawable.perro, 0));
         mascotas.add(new Mascota("Wanda",R.drawable.perro, 0));
         mascotas.add(new Mascota("Leila", R.drawable.gato, 3));
+        mascotas.add(new Mascota("Lizi",R.drawable.perro, 0));
+        mascotas.add(new Mascota("Roncho", R.drawable.gato, 3));
+        mascotas.add(new Mascota("Pechu",R.drawable.perro, 0));
+        mascotas.add(new Mascota("Picu", R.drawable.gato, 3));
 
 
     }
