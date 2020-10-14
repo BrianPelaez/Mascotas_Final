@@ -6,4 +6,8 @@
     <dimen name="imagen_mascota">300sp</dimen>
     <dimen name="elevacion_actionbar">4dp</dimen>
     <dimen name="actionbar_imagen">30dp</dimen>
+    <dimen name="vertical">30dp</dimen>
+    <dimen name="horizontal">30dp</dimen>
+    <dimen name="perfil_borde">4dp</dimen>
+    <dimen name="perfil_radio">10</dimen>
 </resources>

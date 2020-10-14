@@ -1,4 +1,4 @@
-package com.example.mascotas;
+package com.example.mascotas.models;
 
 public class Mascota {
 

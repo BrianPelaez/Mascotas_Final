@@ -8,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.mascotas.adapters.MascotaAdaptador;
+import com.example.mascotas.models.Mascota;
+
 import java.util.ArrayList;
 
 public class mascotas_likeadas extends AppCompatActivity {

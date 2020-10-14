@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.PerfilFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/civPerfil"
+            android:layout_height="200dp"
+            android:layout_width="200dp"
+            android:src="@drawable/perro"
+            android:layout_gravity="center_horizontal"
+            app:civ_border_color="@color/perfil_borde"
+            app:civ_border="true"
+            android:layout_marginTop="@dimen/vertical"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+</FrameLayout>

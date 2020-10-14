@@ -7,12 +7,20 @@
         android:id="@+id/item_like"
         android:icon="@drawable/estrella"
         app:showAsAction="ifRoom|collapseActionView"
-        app:actionViewClass="android.widget.ImageButton">
+        app:actionViewClass="android.widget.ImageButton"
+        android:orderInCategory="1">
     </item>
 
-    <item android:id="@+id/item2"
-        android:title="Ejemplo1"
-        app:showAsAction="never">
+    <item android:id="@+id/item_contacto"
+        android:title="@string/item_contacto"
+        app:showAsAction="never"
+        android:orderInCategory="2">
+    </item>
+
+    <item android:id="@+id/item_about"
+        android:title="@string/item_about"
+        app:showAsAction="never"
+        android:orderInCategory="3">
 
     </item>
 
