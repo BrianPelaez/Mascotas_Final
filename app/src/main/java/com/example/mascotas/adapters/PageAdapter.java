@@ -1,16 +1,19 @@
 package com.example.mascotas.adapters;
 
 
+import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
 public class PageAdapter extends FragmentPagerAdapter {
 
-    private ArrayList<Fragment> fragments;
+    public ArrayList<Fragment> fragments;
 
     public PageAdapter(FragmentManager fm, ArrayList<Fragment> fragments) {
         super(fm);
@@ -26,4 +29,9 @@ public class PageAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return fragments.size();
     }
+
+
+
+
+
 }

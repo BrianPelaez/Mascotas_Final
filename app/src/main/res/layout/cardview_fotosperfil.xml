@@ -5,9 +5,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:layout_marginLeft="@dimen/margen_horizontal"
     android:layout_marginTop="@dimen/margen_vertical"
-    android:layout_marginRight="@dimen/margen_horizontal">
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -16,7 +15,7 @@
 
         <ImageView
             android:id="@+id/ivMascota"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/gato" />

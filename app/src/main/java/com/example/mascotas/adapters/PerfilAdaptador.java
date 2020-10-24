@@ -41,8 +41,8 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
         perfilViewHolder.ivHueso.setImageResource(R.drawable.ic_bone_dark);
 
 
-    }
 
+    }
 
     @Override
     public int getItemCount() {
@@ -64,10 +64,6 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
             tvLikes = (TextView) v.findViewById(R.id.tvLikes);
 
         }
-
-
-
-
 
     }
 }

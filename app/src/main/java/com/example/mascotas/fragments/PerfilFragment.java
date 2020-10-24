@@ -1,20 +1,29 @@
 package com.example.mascotas.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 
 import com.example.mascotas.R;
 import com.example.mascotas.adapters.MascotaAdaptador;
 import com.example.mascotas.adapters.PerfilAdaptador;
 import com.example.mascotas.models.Mascota;
+import com.example.mascotas.presentador.IPerfilFragmentPresentador;
+import com.example.mascotas.presentador.PerfilFragmentPresentador;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
@@ -24,11 +33,11 @@ import java.util.ArrayList;
  * Use the {@link PerfilFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PerfilFragment extends Fragment {
+public class PerfilFragment extends Fragment implements IPerfilFragmentView {
 
-    CircularImageView civPerfil;
+
     RecyclerView rvPerfil;
-    ArrayList<Mascota> perfilFotos;
+    IPerfilFragmentPresentador presentador;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,42 +79,43 @@ public class PerfilFragment extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View v = inflater.inflate(R.layout.fragment_perfil, container, false);
 
-        crearMascotas();
-
         rvPerfil = (RecyclerView) v.findViewById(R.id.rvPerfil);
-        GridLayoutManager glm = new GridLayoutManager(getActivity(), 3);
-        glm.setOrientation(LinearLayoutManager.VERTICAL);
-        rvPerfil.setLayoutManager(glm);
-        iniciarAdaptador();
+        presentador = new PerfilFragmentPresentador(this, getContext());
 
         return v;
     }
-    public void iniciarAdaptador(){
 
-        PerfilAdaptador adaptador = new PerfilAdaptador(perfilFotos, getActivity());
+    @Override
+    public void onResume() {
+        super.onResume();
+        presentador = new PerfilFragmentPresentador(this, getContext());
+    }
+
+    @Override
+    public void generarGridLayoutManager(){
+        GridLayoutManager glm = new GridLayoutManager(getActivity(), 3);
+        glm.setOrientation(LinearLayoutManager.VERTICAL);
+        rvPerfil.setLayoutManager(glm);
+
+    }
+
+    @Override
+    public PerfilAdaptador crearAdaptador(ArrayList<Mascota> mascotas){
+        PerfilAdaptador adaptador = new PerfilAdaptador(mascotas, getActivity());
+        return adaptador;
+    }
+    @Override
+    public void iniciarAdaptador(PerfilAdaptador adaptador){
         rvPerfil.setAdapter(adaptador);
 
     }
 
-    public void crearMascotas(){
 
-        perfilFotos = new ArrayList<Mascota>();
-
-        perfilFotos.add(new Mascota("Susa",R.drawable.perfil, 1));
-        perfilFotos.add(new Mascota("Pancha", R.drawable.perfil, 5));
-        perfilFotos.add(new Mascota("CHancha", R.drawable.perfil, 0));
-        perfilFotos.add(new Mascota("Wanda",R.drawable.perfil, 0));
-        perfilFotos.add(new Mascota("Leila", R.drawable.perfil, 3));
-        perfilFotos.add(new Mascota("Lizi",R.drawable.perfil, 0));
-        perfilFotos.add(new Mascota("Roncho", R.drawable.perfil, 3));
-        perfilFotos.add(new Mascota("Pechu",R.drawable.perfil, 0));
-        perfilFotos.add(new Mascota("Picu", R.drawable.perfil, 3));
-
-    }
 }

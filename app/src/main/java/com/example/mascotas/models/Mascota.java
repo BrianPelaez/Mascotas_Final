@@ -2,6 +2,7 @@ package com.example.mascotas.models;
 
 public class Mascota {
 
+    private int id;
     private String nombre;
     private int foto;
     private int likes;
@@ -10,6 +11,18 @@ public class Mascota {
         this.nombre = nombre;
         this.foto = foto;
         this.likes = likes;
+    }
+
+    public Mascota() {
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {

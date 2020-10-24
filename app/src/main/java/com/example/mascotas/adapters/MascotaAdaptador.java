@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mascotas.DB.ConstuctorMascotas;
 import com.example.mascotas.models.Mascota;
 import com.example.mascotas.R;
 
@@ -46,7 +47,9 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         mascotaViewHolder.ibLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mascotaViewHolder.tvLikes.setText(String.valueOf(mascota.getLikes()+1));
+                ConstuctorMascotas constuctorMascotas = new ConstuctorMascotas(activity);
+                constuctorMascotas.darLike(mascota);
+                mascotaViewHolder.tvLikes.setText(String.valueOf(constuctorMascotas.obtenerLikes(mascota)));
             }
         });
 
@@ -55,7 +58,8 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
     @Override
     public int getItemCount() {
-        return mascotas.size();
+       return mascotas.size();
+
     }
 
     public static class MascotaViewHolder extends RecyclerView.ViewHolder{
